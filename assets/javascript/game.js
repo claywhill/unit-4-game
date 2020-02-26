@@ -66,13 +66,11 @@ function checker() {
   if (total == computerNum) {
     wins++;
     $(".wins").text("Wins: " + wins);
-    computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     reset();
   }
   else if (total > computerNum) {
     losses++;
     $(".losses").text("Losses: " + losses);
-    computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     reset();
   }
 };
