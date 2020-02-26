@@ -8,6 +8,8 @@ var wins = 0;
 
 var losses = 0;
 
+var total = 0;
+
 var computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
 var buttonNum1 = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
@@ -21,7 +23,7 @@ var buttonNum4 = Math.floor(Math.random() * (12 - 10 + 1)) + 10;
 var buttonValues = [];
 
 function runningTotal() {
-  var total = 0;
+  total = 0;
   for (var i = 0; i < buttonValues.length; i++) {
     total = (total + buttonValues[i]) << 0;
   }
@@ -35,31 +37,54 @@ $(".button1").click(function() {
   buttonValues.push(buttonNum1);
   $(".score").text(buttonValues);
   runningTotal();
+  checker();
 });
 
 $(".button2").click(function() {
   buttonValues.push(buttonNum2);
   $(".score").text(buttonValues);
   runningTotal();
+  checker();
 });
 
 $(".button3").click(function() {
   buttonValues.push(buttonNum3);
   $(".score").text(buttonValues);
   runningTotal();
+  checker();
 });
 
 $(".button4").click(function() {
   buttonValues.push(buttonNum4);
   $(".score").text(buttonValues);
   runningTotal();
+  checker();
 });
 
-if (total == computerNum) {
-  wins++;
-  $(".wins").text("Wins: " + wins);
-}
-else if (total > computerNum) {
-  losses++;
-  $(".losses").text("Losses: " + losses);
+
+function checker() {
+  if (total == computerNum) {
+    wins++;
+    $(".wins").text("Wins: " + wins);
+    computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    reset();
+  }
+  else if (total > computerNum) {
+    losses++;
+    $(".losses").text("Losses: " + losses);
+    computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    reset();
+  }
 };
+
+function reset() {
+  total = 0;
+  computerNum = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+  buttonNum1 = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+  buttonNum2 = Math.floor(Math.random() * (6 - 4 + 1)) + 4;
+  buttonNum3 = Math.floor(Math.random() * (9 - 7 + 1)) + 7;
+  buttonNum4 = Math.floor(Math.random() * (12 - 10 + 1)) + 10;
+  buttonValues = [];
+  $(".random").text(computerNum);
+  $(".score").text(null);
+}
