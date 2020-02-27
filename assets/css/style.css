@@ -6,47 +6,55 @@ body {
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
+    display: inline-block;
+    
 }
 
 .sapphire, .ruby, .emerald,.diamond {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    display: block;
 }
 
 .random {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     background-color: gray;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 600px;
+    margin-right: 600px;
+    display: block;
 }
 
 .wins {
     font-size: 20px;
     background-color: gray;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 600px;
+    margin-right: 600px;
+    display: block;
 }
 
 .losses {
     font-size: 20px;
     background-color: gray;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 600px;
+    margin-right: 600px;
     margin-bottom: 5px;
+    display: block;
 }
 
 .scoretext {
     font-size: 20px;
     background-color: gray;
-    margin-left: 800px;
-    margin-right: 800px;
-    margin-top: 5px;   
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-top: 5px;
+    display: block; 
 }
 
 .score {
     font-size: 20px;
     background-color: gray;
-    margin-left: 800px;
-    margin-right: 800px;
+    margin-left: 600px;
+    margin-right: 600px;
+    display: block;
 }
